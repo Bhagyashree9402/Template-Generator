@@ -34,14 +34,11 @@ const callback = cb => {
             fs.writeFile("./output/team.html", render(employees), function (err) {
                 if (err) {
                     console.log(error);
-
                 }
                 else {
                     console.log("success");
-
                 }
             })
-
             return;
 
         } else if (res4.choice === "Yes") {
@@ -49,8 +46,10 @@ const callback = cb => {
         }
     })
 }
+
 promptme(callback);
 
+//user inputs prompted inside the callback function
 function promptme(cb) {
 
     inquirer.prompt([{
