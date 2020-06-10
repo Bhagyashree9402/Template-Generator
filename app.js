@@ -14,6 +14,8 @@ const render = require("./lib/htmlRenderer");
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 let employees = [];
+
+//callback function
 const callback = cb => {
 
     inquirer.prompt({
@@ -55,6 +57,7 @@ function promptme(cb) {
         type: "input",
         name: "name",
         message: "Enter employee name",
+        //proper validating code for employee name
         validate: async (input) => {
             var letters = /^[A-Za-z]+$/;
             if (!input.match(letters)) {
@@ -69,6 +72,7 @@ function promptme(cb) {
         name: "id",
         message: "Enter employee Id",
         validate: async (input) => {
+            //proper validating code for employee id
             if (isNaN(input)) {
                 return "Incorrect input for employee id";
             }
@@ -79,6 +83,7 @@ function promptme(cb) {
         type: "input",
         name: "email",
         message: "Enter employee's valid email",
+        //proper validating code for email 
         validate: async (input) => {
             var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
             if (!input.match(mailformat)) {
